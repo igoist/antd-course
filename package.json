@@ -1,0 +1,19 @@
+{
+  "name": "antd-course",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "umi dev",
+    "build": "umi build"
+  },
+  "author": "igoist",
+  "license": "ISC",
+  "devDependencies": {
+    "umi": "^2.1.0",
+    "umi-plugin-react": "^1.1.0"
+  },
+  "dependencies": {
+    "antd": "^3.9.3"
+  }
+}
