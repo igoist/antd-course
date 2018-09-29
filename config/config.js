@@ -15,12 +15,14 @@ export default {
       {
         path: 'helloworld',
         component: './HelloWorld',
+        icon: 'code-o'
       },
       {
         path: '/dashboard',
+        icon: 'dashboard',
         routes: [
-          { path: '/dashboard/analysis', component: 'Dashboard/Analysis' },
-          { path: '/dashboard/monitor', component: 'Dashboard/Monitor' },
+          { path: '/dashboard/analysis', component: 'Dashboard/Analysis', icon: 'profile' },
+          { path: '/dashboard/monitor', component: 'Dashboard/Monitor', icon: 'heart-o' },
           { path: '/dashboard/workplace', component: 'Dashboard/Workplace' },
         ]
       }
