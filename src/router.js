@@ -6,7 +6,7 @@ const routerArr = config.routes[0].routes;
 
 const defaultIconName = 'tags-o';
 
-const lastPathName = url => {
+const lastPathname = url => {
   let pieces = url.split('/');
   return pieces[pieces.length - 1];
 };
@@ -19,7 +19,7 @@ class MenuNew extends React.Component {
       let item = routerArr[i];
 
       if (item.routes) {
-        let title = lastPathName(item.path);
+        let title = lastPathname(item.path);
         title = title.replace(/^\S/, s => s.toUpperCase());
 
         rows.push(
@@ -29,10 +29,10 @@ class MenuNew extends React.Component {
           >
             {
               item.routes.map((ii, index) => (
-                <Menu.Item key={ i.toString() + '-' + index.toString() } title={ lastPathName(ii.component) }>
+                <Menu.Item key={ i.toString() + '-' + index.toString() } title={ lastPathname(ii.component) }>
                   <Link to={ ii.path }>
                     <Icon type={ ii.icon ? ii.icon : defaultIconName } />
-                    <span>{ lastPathName(ii.component) }</span>
+                    <span>{ lastPathname(ii.component) }</span>
                   </Link>
                 </Menu.Item>
               ))
@@ -45,7 +45,7 @@ class MenuNew extends React.Component {
           <Menu.Item key={ i.toString() }>
             <Link to={ item.path }>
               <Icon type={ item.icon ? item.icon : defaultIconName } />
-              <span>{ lastPathName(item.component) }</span>
+              <span>{ lastPathname(item.component) }</span>
             </Link>
           </Menu.Item>
         );
