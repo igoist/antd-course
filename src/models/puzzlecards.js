@@ -29,10 +29,12 @@ export default {
       const { call, put } = sagaEffects;
       const endPointURI = '/dev/random_joke';
 
+      yield call(delay, 1000);
+
       const puzzle = yield call(request, endPointURI);
       yield put({ type: 'addNewCard', payload: puzzle });
 
-      yield call(delay, 3000);
+      yield call(delay, 100);
 
       const puzzle2 = yield call(request, endPointURI);
       yield put({ type: 'addNewCard', payload: puzzle2 });
