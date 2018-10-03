@@ -14,13 +14,24 @@ const random_jokes = [
 ];
 
 let random_joke_call_count = 0;
+let flagSuccess = false;
 
 export default {
+  // the simplest usage
+  // 'get /dev/random_joke': {
+  //   setup: 'What is the object oriented way to get wealthy ?',
+  //   punchline: 'Inheritance',
+  // },
   'get /dev/random_joke': function (req, res) {
-    const responseObj = random_jokes[random_joke_call_count % random_jokes.length];
-    random_joke_call_count += 1;
-    setTimeout(() => {
-      res.json(responseObj);
-    }, 1);
+    if (flagSuccess) {
+      const responseObj = random_jokes[random_joke_call_count % random_jokes.length];
+      random_joke_call_count += 1;
+      setTimeout(() => {
+        res.json(responseObj);
+      }, 1);
+    } else {
+      res.status(500);
+      res.json({});
+    }
   },
 };
