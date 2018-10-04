@@ -42,6 +42,11 @@ export default {
       return {
         cardsList
       };
-    }
+    },
+    addOne(state, { payload }) {
+      return {
+        cardsList: [...state.cardsList, payload]
+      };
+    },
   }
 };
