@@ -20,33 +20,33 @@ let data = [
 ];
 
 export default {
-  // 'get /api/cards': function (req, res, next) {
-  //   setTimeout(() => {
-  //     res.json({
-  //       result: data,
-  //     })
-  //   }, 250)
-  // },
-  // 'delete /api/cards/:id': function (req, res, next) {
-  //   data = data.filter(v => v.id !== parseInt(req.params.id));
-  //   console.log(req.params.id);
-  //   console.log(data);
-  //   setTimeout(() => {
-  //     res.json({
-  //       success: true,
-  //     })
-  //   }, 250)
-  // },
-  // 'post /api/cards/add': function (req, res, next) {
-  //   data = [...data, {
-  //     ...req.body,
-  //     id: data[data.length - 1].id + 1,
-  //   }];
+  'get /api/cards': function (req, res, next) {
+    setTimeout(() => {
+      res.json({
+        result: data,
+      })
+    }, 250)
+  },
+  'delete /api/cards/:id': function (req, res, next) {
+    data = data.filter(v => v.id !== parseInt(req.params.id));
+    console.log(req.params.id);
+    console.log(data);
+    setTimeout(() => {
+      res.json({
+        success: true,
+      })
+    }, 250)
+  },
+  'post /api/cards/add': function (req, res, next) {
+    data = [...data, {
+      ...req.body,
+      id: data[data.length - 1].id + 1,
+    }];
 
-  //   res.json({
-  //     success: true,
-  //   });
-  // },
+    res.json({
+      success: true,
+    });
+  },
   'get /api/cards/:id/statistic': function (req, res, next) {
     res.json({
       result: [
