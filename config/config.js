@@ -28,7 +28,8 @@ export default {
         ]
       },
       { path: '/puzzlecards', component: './puzzlecards' },
-      { path: '/list', component: '../page/List' }
+      { path: '/list', component: '../page/List' },
+      { path: '/todo', component: './todo' }
     ]
   }],
   proxy: {
